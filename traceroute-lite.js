@@ -28,15 +28,22 @@ function Traceroute(host, options) {
       }
     };
   }
-  else if (LIN) {
-    this._bin = '/bin/traceroute';
-    this._args = (options.args) ? options.args : [ '-n', '-w', '2', '-c', '1', host ];
-    this._regmatch = /time=(.+?) ms/; // need to verify this
+  else if (LIN) { // need to validate this
+    throw new Error('Sorry, I haven\'t built Linux support yet');
+//    this._bin = '/bin/traceroute';
+//    this._args = (options.args) ? options.args : [ '-n', '-w', '2', '-c', '1', host ];
+//    this._regmatch = /time=(.+?) ms/; // need to verify this
   }
   else if (MAC) {
-    this._bin = '/sbin/traceroute';
-    this._args = (options.args) ? options.args : [ '-n', '-t', '2', '-c', '1', host ];
-    this._regmatch = /time=(.+?) ms/;
+    this._bin = '/usr/sbin/traceroute';
+    this._args = (options.args) ? options.args.concat(host) : [ '-q', '1', '-n', host ];
+    this._eol = /\n/;
+    this._reghop = /\s*(\d+)\s+(\*|([^\s]+)\s+([^\s]+) ms)/;
+    this._parsehop = function(hopline) {
+      var ip = (hopline[2] == '*') ? null : hopline[3],
+          ms = (ip !== null && hopline[4]) ? hopline[4] : null;
+      return { ip: ip, ms: ms };
+    };
   }
   else {
     throw new Error('Could not detect your traceroute binary.');
