@@ -1,0 +1,35 @@
+{
+  "name": "traceroute-lite",
+  "version": "0.0.1",
+  "description": "A very simple traceroute wrapper",
+  "keywords": [
+    "traceroute"
+  ],
+  "scripts": {
+    "test": "cd test && mocha ./"
+  },
+  "author": {
+    "name": "Ben Bradley",
+    "email": "ben@bradleyit.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ben-bradley/traceroute-lite"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "browser": {
+  },
+  "main": "traceroute-lite.js",
+  "engines": {
+    "node": "*"
+  },
+  "readmeFilename": "Readme.md",
+  "bugs": {
+    "url": "https://github.com/ben-bradley/traceroute-lite/issues"
+  },
+  "homepage": "https://github.com/ben-bradley/traceroute-lite"
+}
