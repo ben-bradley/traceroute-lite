@@ -11,6 +11,8 @@ describe('Traceroute-lite', function () {
     var traceroute = new Traceroute('localhost');
     (traceroute).should.be.an.instanceOf(Traceroute);
     (traceroute).should.have.properties(['host', 'platform', 'profile']);
+    (traceroute.start).should.be.a.Function;
+    (traceroute.reset).should.be.a.Function;
   })
 
   describe('Events', function () {
