@@ -1,4 +1,4 @@
-# traceroute-lite [![Build Status](https://secure.travis-ci.org/ben-bradley/traceroute-lite.png)](http://travis-ci.org/ben-bradley/traceroute-lite) [![NPM](https://nodei.co/npm/traceroute-lite.png?downloads=true)](https://nodei.co/npm/traceroute-lite/)
+# traceroute-lite [![NPM](https://nodei.co/npm/traceroute-lite.png?downloads=true)](https://nodei.co/npm/traceroute-lite/)
 
 A simple traceroute module for NodeJS apps.
 
