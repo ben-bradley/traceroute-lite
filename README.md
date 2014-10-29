@@ -5,7 +5,7 @@ A simple traceroute module for NodeJS apps.
 ## Install
 
 ```
-npm install traceroute-lite`
+npm install traceroute-lite
 ```
 
 -or-
@@ -20,6 +20,12 @@ npm install ben-bradley/traceroute-lite
 npm test
 ```
 
+-or-
+
+```
+mocha -R spec
+```
+
 ## Usage
 
 ```javascript
@@ -28,7 +34,7 @@ var Traceroute = require('traceroute-lite');
 var traceroute = new Traceroute('8.8.8.8');
 
 traceroute.on('hop', function(hop) {
-  console.log(hop); // { ip: '1.2.3.4', ms: 12 }
+  console.log(hop); // { counter: 1, ip: '1.2.3.4', ms: 12 }
 });
 
 traceroute.start(function(err, hops) {
@@ -68,7 +74,7 @@ If a hop fails to respond, the `ip` and `ms` are `null`.
 
 ## Examples
 
-Using a `callback`:
+#### Using a `callback`:
 
 ```javascript
 var Traceroute = require('traceroute-lite');
@@ -87,7 +93,7 @@ traceroute.start(function(err, hops) {
 });
 ```
 
-Using `Event`s:
+#### Using `Event`s:
 
 ```javascript
 var Traceroute = require('traceroute-lite');
